@@ -6,58 +6,349 @@
   <title>House Fellowship Leadership Program Application</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-emerald-50/50 min-h-screen py-10 px-4 sm:px-6">
+<body class="bg-emerald-50/40 min-h-screen py-8 px-4 sm:px-6 font-sans">
 
-  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md border border-emerald-100 overflow-hidden">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-emerald-100 overflow-hidden">
+    
     <div class="bg-emerald-800 text-white p-6 sm:p-8 text-center border-b-4 border-emerald-600">
       <h1 class="text-xl sm:text-2xl font-bold tracking-wide uppercase">
         House Fellowship Leadership Program Application E-Form
       </h1>
       <p class="text-emerald-100 text-sm mt-2 font-medium">
-        Please fill out all required fields accurately.
+        Please complete all sections of the application form accurately.
       </p>
     </div>
 
-    <form class="p-6 sm:p-8 space-y-6" onsubmit="event.preventDefault();">
-      
-      <div>
-        <h2 class="text-lg font-semibold text-emerald-900 border-b-2 border-emerald-200 pb-2 mb-4">
-          Personal Details
-        </h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form class="p-6 sm:p-10 space-y-10" onsubmit="event.preventDefault();">
+
+      <section class="space-y-6">
+        <div class="border-b-2 border-emerald-600 pb-2 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-emerald-900 uppercase tracking-wide">Section 1: Personal Details</h2>
+          <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">1 of 4</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-            <input type="text" placeholder="John Doe" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm transition">
+            <label class="block text-sm font-semibold text-gray-700 mb-1">1. First Name *</label>
+            <input type="text" required placeholder="John" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-            <input type="email" placeholder="example@gmail.com" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm transition">
+            <label class="block text-sm font-semibold text-gray-700 mb-1">2. Middle Name</label>
+            <input type="text" placeholder="Chidubem" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-            <input type="tel" placeholder="+234..." required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm transition">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Residential Address *</label>
-            <input type="text" placeholder="Address..." required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm transition">
+            <label class="block text-sm font-semibold text-gray-700 mb-1">3. Last Name *</label>
+            <input type="text" required placeholder="Adeyemi" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
           </div>
         </div>
-      </div>
 
-      <div id="additional-questions" class="border-2 border-dashed border-emerald-200 rounded-lg p-6 text-center text-gray-500 bg-emerald-50/30">
-        <p class="text-sm font-medium text-emerald-800">Ready for your questions...</p>
-        <p class="text-xs text-gray-500 mt-1">Send over the rest of the form fields and I will build them straight into this layout.</p>
-      </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">4. Date of Birth *</label>
+            <input type="date" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm text-gray-700">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">5. Sex *</label>
+            <select required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select sex</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">6. Marital Status *</label>
+            <select required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select status</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="divorced">Divorced</option>
+              <option value="separated">Separated</option>
+            </select>
+          </div>
+        </div>
+      </section>
 
-      <div class="pt-4">
-        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-3 px-6 rounded-md transition duration-200 shadow hover:shadow-md">
-          Submit Application
+      <section class="space-y-6">
+        <div class="border-b-2 border-emerald-600 pb-2 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-emerald-900 uppercase tracking-wide">Section 2: Origin & Residential Details</h2>
+          <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">2 of 4</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">7. Nationality *</label>
+            <select id="nationality-select" onchange="handleNationalityChange(this.value)" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select or type nationality</option>
+              <option value="Nigerian">Nigerian</option>
+              <option value="Ghanaian">Ghanaian</option>
+              <option value="Kenyan">Kenyan</option>
+              <option value="South African">South African</option>
+              <option value="United States">American</option>
+              <option value="United Kingdom">British</option>
+              <option value="other">Other (Please specify)</option>
+            </select>
+            <input type="text" id="nationality-other" placeholder="Specify nationality..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">8. State of Origin *</label>
+            <select id="state-select" onchange="handleOtherSelect(this, 'state-other')" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select State</option>
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="FCT - Abuja">FCT - Abuja</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kano">Kano</option>
+              <option value="Katsina">Katsina</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nasarawa">Nasarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
+              <option value="other">Other (Please specify)</option>
+            </select>
+            <input type="text" id="state-other" placeholder="Specify state..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">9. Local Government *</label>
+            <select id="lga-select" onchange="handleOtherSelect(this, 'lga-other')" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select Local Government</option>
+              <option value="Jos North">Jos North</option>
+              <option value="Jos South">Jos South</option>
+              <option value="Ikeja">Ikeja</option>
+              <option value="Surulere">Surulere</option>
+              <option value="other">Other (Please specify)</option>
+            </select>
+            <input type="text" id="lga-other" placeholder="Specify LGA..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">10. Home Town *</label>
+            <input type="text" required placeholder="e.g. Jos / Abeokuta" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">11. Street Address *</label>
+            <input type="text" required placeholder="House No, Street, City" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">12. Telephone *</label>
+            <div class="flex">
+              <span id="phone-prefix" class="inline-flex items-center px-3 text-sm text-gray-600 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg font-medium">
+                +234
+              </span>
+              <input type="tel" required placeholder="8012345678" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">13. Email Address *</label>
+            <input type="email" required placeholder="applicant@gmail.com" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">17. Next of Kin Relationship *</label>
+            <select onchange="handleOtherSelect(this, 'kin-other')" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select relationship</option>
+              <option value="relative">Relative</option>
+              <option value="friend">Friend</option>
+              <option value="other">Other (Please specify)</option>
+            </select>
+            <input type="text" id="kin-other" placeholder="Specify relationship..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="border-b-2 border-emerald-600 pb-2 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-emerald-900 uppercase tracking-wide">Section 3: Church & Spiritual Background</h2>
+          <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">3 of 4</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">14. Parish Name *</label>
+            <input type="text" required placeholder="e.g. Jesus House" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">15. Province *</label>
+            <input type="text" required placeholder="e.g. LP 1 / Province 3" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">16. Region *</label>
+            <input type="text" required placeholder="e.g. Region 19" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+          </div>
+        </div>
+
+        <div class="p-5 bg-emerald-50/60 border border-emerald-200 rounded-xl space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-800 mb-1">19. Are you born again? *</label>
+              <select id="born-again-select" onchange="toggleBornAgain(this.value)" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+                <option value="" disabled selected>Select Yes or No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div id="born-again-date-container" class="hidden">
+              <label class="block text-sm font-semibold text-gray-800 mb-1">19b. When were you born again? *</label>
+              <input type="date" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm text-gray-700 bg-white">
+            </div>
+          </div>
+
+          <div id="water-baptism-container" class="hidden border-t border-emerald-200 pt-4 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-800 mb-1">19c. Have you done water baptism? *</label>
+              <select id="water-baptism-select" onchange="toggleWaterBaptism(this.value)" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+                <option value="" disabled selected>Select Yes or No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div id="water-baptism-year-container" class="hidden">
+              <label class="block text-sm font-semibold text-gray-800 mb-1">19d. What year was your baptism? *</label>
+              <input type="number" min="1950" max="2026" placeholder="e.g. 2018" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="border-b-2 border-emerald-600 pb-2 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-emerald-900 uppercase tracking-wide">Section 4: Qualifications & Ordination</h2>
+          <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">4 of 4</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">18. Highest Education Level *</label>
+            <select onchange="handleOtherSelect(this, 'edu-other')" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select qualification</option>
+              <option value="O'LEVEL">O'LEVEL</option>
+              <option value="NCE">NCE</option>
+              <option value="HND">HND</option>
+              <option value="BSC">BSC</option>
+              <option value="MSC">MSC</option>
+              <option value="PHD">PHD</option>
+              <option value="other">OTHER (Please specify)</option>
+            </select>
+            <input type="text" id="edu-other" placeholder="Specify education qualification..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">20. Ordination Status *</label>
+            <select onchange="handleOtherSelect(this, 'ordination-other')" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-white">
+              <option value="" disabled selected>Select status</option>
+              <option value="worker">Worker</option>
+              <option value="deacon">Deacon / Deaconess</option>
+              <option value="assistant_pastor">Assistant Pastor</option>
+              <option value="pastor">Pastor</option>
+              <option value="other">Others (Please specify)</option>
+            </select>
+            <input type="text" id="ordination-other" placeholder="Specify ordination status..." class="hidden mt-2 w-full px-3.5 py-2 border border-emerald-300 rounded-lg text-sm bg-emerald-50/50 outline-none focus:ring-2 focus:ring-emerald-600">
+          </div>
+        </div>
+      </section>
+
+      <div class="pt-6 border-t border-gray-200">
+        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg hover:shadow-xl text-base tracking-wide uppercase">
+          Submit Application Form
         </button>
       </div>
 
     </form>
   </div>
+
+  <script>
+    // Handle 'Other' select field toggles
+    function handleOtherSelect(selectElement, targetInputId) {
+      const targetInput = document.getElementById(targetInputId);
+      if (selectElement.value === 'other') {
+        targetInput.classList.remove('hidden');
+        targetInput.setAttribute('required', 'required');
+      } else {
+        targetInput.classList.add('hidden');
+        targetInput.removeAttribute('required');
+      }
+    }
+
+    // Dynamic Nationality prefix adjustment
+    function handleNationalityChange(val) {
+      const prefixEl = document.getElementById('phone-prefix');
+      const otherInput = document.getElementById('nationality-other');
+
+      if (val === 'other') {
+        otherInput.classList.remove('hidden');
+        otherInput.setAttribute('required', 'required');
+      } else {
+        otherInput.classList.add('hidden');
+        otherInput.removeAttribute('required');
+      }
+
+      if (val === 'Nigerian') prefixEl.textContent = '+234';
+      else if (val === 'Ghanaian') prefixEl.textContent = '+233';
+      else if (val === 'Kenyan') prefixEl.textContent = '+254';
+      else if (val === 'United States') prefixEl.textContent = '+1';
+      else if (val === 'United Kingdom') prefixEl.textContent = '+44';
+      else prefixEl.textContent = '+...';
+    }
+
+    // Toggle 19b & 19c when Born Again = Yes
+    function toggleBornAgain(value) {
+      const dateContainer = document.getElementById('born-again-date-container');
+      const baptismContainer = document.getElementById('water-baptism-container');
+
+      if (value === 'yes') {
+        dateContainer.classList.remove('hidden');
+        baptismContainer.classList.remove('hidden');
+      } else {
+        dateContainer.classList.add('hidden');
+        baptismContainer.classList.add('hidden');
+        document.getElementById('water-baptism-year-container').classList.add('hidden');
+      }
+    }
+
+    // Toggle 19d when Water Baptism = Yes
+    function toggleWaterBaptism(value) {
+      const yearContainer = document.getElementById('water-baptism-year-container');
+      if (value === 'yes') {
+        yearContainer.classList.remove('hidden');
+      } else {
+        yearContainer.classList.add('hidden');
+      }
+    }
+  </script>
 
 </body>
 </html>
