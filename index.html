@@ -343,9 +343,12 @@
 
   </div>
 
-  <script>
+<script>
     let currentStep = 1;
     const totalSteps = 5;
+
+    // Google Apps Script Web App Deployment URL
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhGAAUKEWwzUNOcNUw0TCj4ogJWxmP-PS7HgdL1m4Lu99hEBP2IT5T5exlyQu5inAl/exec";
 
     const targetWhatsAppNumber = "2348036926977"; 
 
@@ -396,7 +399,7 @@
         '<option value="other" class="bg-slate-800">Other (Specify)</option>';
     }
 
-    function changeStep(direction) {
+    async function changeStep(direction) {
       if (direction === 1) {
         const currentStepContainer = document.getElementById(`step-${currentStep}`);
         const requiredInputs = currentStepContainer.querySelectorAll('[required]');
@@ -410,6 +413,20 @@
         });
 
         if (!isValid) return;
+
+        // Submits form data to Google Sheets when transitioning from Step 4 to Step 5
+        if (currentStep === 4) {
+          const nextBtn = document.getElementById('next-btn');
+          const originalText = nextBtn.innerText;
+          
+          nextBtn.disabled = true;
+          nextBtn.innerText = "Submitting...";
+
+          await submitFormToSheets();
+
+          nextBtn.disabled = false;
+          nextBtn.innerText = originalText;
+        }
       }
 
       document.getElementById(`step-${currentStep}`).classList.add('hidden');
@@ -427,17 +444,70 @@
 
       for (let i = 1; i <= totalSteps; i++) {
         const pill = document.getElementById(`step-pill-${i}`);
-        if (i === currentStep) {
-          pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-extrabold transition-all duration-300 bg-amber-400 text-slate-950 ring-4 ring-amber-400/30";
-        } else if (i < currentStep) {
-          pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-extrabold transition-all duration-300 bg-emerald-500 text-slate-950 ring-4 ring-slate-800";
-        } else {
-          pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 bg-slate-700 text-emerald-200 ring-4 ring-slate-800";
+        if (pill) {
+          if (i === currentStep) {
+            pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-extrabold transition-all duration-300 bg-amber-400 text-slate-950 ring-4 ring-amber-400/30";
+          } else if (i < currentStep) {
+            pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-extrabold transition-all duration-300 bg-emerald-500 text-slate-950 ring-4 ring-slate-800";
+          } else {
+            pill.className = "relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 bg-slate-700 text-emerald-200 ring-4 ring-slate-800";
+          }
         }
       }
 
-      const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
-      document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar) {
+        const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+      }
+    }
+
+    async function submitFormToSheets() {
+      const getVal = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value : '';
+      };
+
+      const formData = {
+        firstName: getVal('firstName'),
+        middleName: getVal('middleName'),
+        lastName: getVal('lastName'),
+        dob: getVal('dob-input'),
+        sex: getVal('sexSelect'),
+        maritalStatus: getVal('maritalSelect'),
+        nationality: getVal('nationality-select') === 'other' ? getVal('nationality-other') : getVal('nationality-select'),
+        state: getVal('state-select') === 'other' ? getVal('state-other') : getVal('state-select'),
+        lga: getVal('lga-select') === 'other' ? getVal('lga-other') : getVal('lga-select'),
+        homeTown: getVal('homeTown'),
+        address: getVal('address'),
+        phonePrefix: getVal('phone-prefix'),
+        phone: getVal('phoneInput'),
+        email: getVal('emailInput'),
+        kinRelationship: getVal('kinRelationship'),
+        kinName: getVal('kinName'),
+        kinPhone: getVal('kinPhone'),
+        parish: getVal('parish'),
+        province: getVal('province'),
+        region: getVal('region'),
+        bornAgain: getVal('born-again-select'),
+        bornAgainDate: getVal('born-again-date'),
+        waterBaptism: getVal('water-baptism-select'),
+        baptismYear: getVal('water-baptism-year'),
+        education: getVal('eduSelect'),
+        ordination: getVal('ordinationSelect'),
+        program: getVal('programSelect')
+      };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
 
     function handleOtherSelect(selectElement, targetInputId) {
@@ -471,33 +541,10 @@
     }
 
     function redirectToWhatsApp(e) {
-  e.preventDefault();
-
-  const button = document.getElementById('whatsapp-link-btn');
-  const originalText = button.innerHTML;
-
-  // 1. Show loading state on the button
-  button.classList.add('opacity-75', 'pointer-events-none');
-  button.innerHTML = `
-    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-slate-950 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-    </svg>
-    Please wait while WhatsApp loads...
-  `;
-
-  // 2. Redirect to WhatsApp after a short delay so the user sees the notification
-  setTimeout(() => {
-    const whatsappURL = `https://wa.me/${targetWhatsAppNumber}?text=${prefilledMessage}`;
-    window.open(whatsappURL, '_blank');
-
-    // 3. Reset button back to normal state after opening
-    setTimeout(() => {
-      button.classList.remove('opacity-75', 'pointer-events-none');
-      button.innerHTML = originalText;
-    }, 1000);
-  }, 600);
-}
+      if (e) e.preventDefault();
+      const whatsappURL = `https://wa.me/${targetWhatsAppNumber}?text=${prefilledMessage}`;
+      window.open(whatsappURL, '_blank');
+    }
 
     window.onload = function() {
       const today = new Date();
