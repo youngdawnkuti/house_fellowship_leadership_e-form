@@ -19,13 +19,15 @@
       </p>
 
       <div class="mt-4 max-w-xs mx-auto bg-emerald-950/60 p-1.5 rounded-full flex justify-between items-center text-xs font-bold text-emerald-200">
-        <span id="step-pill-1" class="px-2.5 py-0.5 rounded-full bg-amber-400 text-emerald-950">1</span>
+        <span id="step-pill-1" class="px-2.5 py-0.5 rounded-full bg-amber-400 text-emerald-950 font-extrabold">1</span>
         <div class="h-0.5 bg-emerald-700 flex-1 mx-1"></div>
         <span id="step-pill-2" class="px-2.5 py-0.5 rounded-full">2</span>
         <div class="h-0.5 bg-emerald-700 flex-1 mx-1"></div>
         <span id="step-pill-3" class="px-2.5 py-0.5 rounded-full">3</span>
         <div class="h-0.5 bg-emerald-700 flex-1 mx-1"></div>
         <span id="step-pill-4" class="px-2.5 py-0.5 rounded-full">4</span>
+        <div class="h-0.5 bg-emerald-700 flex-1 mx-1"></div>
+        <span id="step-pill-5" class="px-2.5 py-0.5 rounded-full">5</span>
       </div>
     </div>
 
@@ -37,7 +39,7 @@
             <h2 class="text-base font-bold text-emerald-900 uppercase">Personal Information</h2>
             <p class="text-xs text-slate-500">Provide basic identity details and program category.</p>
           </div>
-          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 1 of 4</span>
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 1 of 5</span>
         </div>
 
         <div>
@@ -94,7 +96,7 @@
             <h2 class="text-base font-bold text-emerald-900 uppercase">Origin & Next of Kin</h2>
             <p class="text-xs text-slate-500">Address and contact details.</p>
           </div>
-          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 2 of 4</span>
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 2 of 5</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -188,7 +190,7 @@
             <h2 class="text-base font-bold text-emerald-900 uppercase">Church Background</h2>
             <p class="text-xs text-slate-500">Parish information and spiritual journey.</p>
           </div>
-          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 3 of 4</span>
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 3 of 5</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -243,7 +245,7 @@
             <h2 class="text-base font-bold text-emerald-900 uppercase">Qualifications & Ordination</h2>
             <p class="text-xs text-slate-500">Education and church position.</p>
           </div>
-          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 4 of 4</span>
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 4 of 5</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -275,6 +277,42 @@
         </div>
       </div>
 
+     <div id="step-5" class="hidden space-y-4">
+        <div class="border-b border-slate-200 pb-2 flex items-center justify-between">
+          <div>
+            <h2 class="text-base font-bold text-emerald-900 uppercase">Verification & Appointment</h2>
+            <p class="text-xs text-slate-500">Schedule your physical form completion.</p>
+          </div>
+          <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Step 5 of 5</span>
+        </div>
+
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <h3 class="text-xs font-bold text-emerald-900 uppercase tracking-wide">E-Application Submitted Successfully</h3>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+            Your online details have been recorded. To finalize your registration, you must meet for a physical verification appointment where your passport photograph and signature will be attached to your official student booklet.
+          </p>
+        </div>
+
+        <div class="p-4 bg-amber-50/80 border border-amber-200 rounded-xl space-y-2">
+          <h3 class="text-xs font-bold uppercase text-amber-900 border-b border-amber-200 pb-1">Next Step: Schedule Appointment</h3>
+          <p class="text-[11px] text-amber-800 leading-snug">
+            Click the button below to message Pastor Kuti on WhatsApp and arrange the time and venue to complete your physical registration booklet carrying your assigned matriculation reference.
+          </p>
+        </div>
+
+        <div class="pt-2 text-center">
+          <a id="whatsapp-link-btn" href="#" target="_blank" onclick="redirectToWhatsApp(event)" class="inline-flex items-center justify-center w-full bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3 px-5 rounded-xl text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Click Here to Schedule Appointment
+          </a>
+        </div>
+
+        <div class="p-3.5 bg-slate-100 border border-slate-200 rounded-lg text-[10px] text-slate-500 text-justify leading-relaxed">
+          <span class="font-bold text-slate-700 uppercase">Official Disclaimer:</span> 
+          This portal was not created to impersonate any organization. Every submission made on this platform goes directly to the coordinator, Pastor Kuti, for the processing of the physical form which carries the student's matriculation number. Contact <span class="font-semibold text-slate-700">08036926977</span> for more information.
+        </div>
+      </div>
+
     </form>
 
     <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-between items-center mt-auto">
@@ -285,9 +323,6 @@
         <button type="button" id="next-btn" onclick="changeStep(1)" class="bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 px-6 rounded-lg text-xs uppercase tracking-wider shadow-md transition">
           Next Step
         </button>
-        <button type="submit" id="submit-btn" form="multi-step-form" class="hidden bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-2.5 px-6 rounded-lg text-xs uppercase tracking-wider shadow-md transition">
-          Submit Application
-        </button>
       </div>
     </div>
 
@@ -295,7 +330,15 @@
 
   <script>
     let currentStep = 1;
-    const totalSteps = 4;
+    const totalSteps = 5;
+
+    // Target WhatsApp Number (Update when ready)
+    const targetWhatsAppNumber = "2348036926977"; 
+
+   // Pre-filled WhatsApp message without payment references
+const prefilledMessage = encodeURIComponent(
+  "Hello Pst Kuti, I have completed my online registration form. When and where is my appointment scheduled for the completion of the physical verification process?"
+);
 
     const statesByCountry = {
       Nigerian: ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"],
@@ -345,8 +388,8 @@
         prevBtn.classList.remove('invisible');
       }
 
+      // Hide Next button on step 5 (Final payment step)
       document.getElementById('next-btn').classList.toggle('hidden', currentStep === totalSteps);
-      document.getElementById('submit-btn').classList.toggle('hidden', currentStep !== totalSteps);
 
       // Update Progress indicators
       for (let i = 1; i <= totalSteps; i++) {
@@ -387,6 +430,12 @@
       } else {
         yearContainer.classList.add('hidden');
       }
+    }
+
+    function redirectToWhatsApp(e) {
+      e.preventDefault();
+      const whatsappURL = `https://wa.me/${targetWhatsAppNumber}?text=${prefilledMessage}`;
+      window.open(whatsappURL, '_blank');
     }
 
     window.onload = function() {
